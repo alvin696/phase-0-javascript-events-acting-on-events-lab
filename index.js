@@ -1,5 +1,15 @@
 const dodger = document.getElementById('dodger');
 
+function addingEventListener() {
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowLeft') {
+      moveDodgerLeft();
+    } else if (event.key === 'ArrowRight') {
+      moveDodgerRight();
+    }
+  });
+}
+
 function moveDodgerLeft() {
   const left = parseInt(dodger.style.left);
   if (left > 0) {
@@ -14,10 +24,4 @@ function moveDodgerRight() {
   }
 }
 
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'ArrowLeft') {
-    moveDodgerLeft();
-  } else if (event.key === 'ArrowRight') {
-    moveDodgerRight();
-  }
-});
+addingEventListener();
